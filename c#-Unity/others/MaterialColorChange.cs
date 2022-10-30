@@ -4,6 +4,7 @@ using UnityEngine;
 
 //Beginner friendly material changing Script
 //You will need to create an input manager i have called mine Fly so that you can use in line 28
+//Supports two mterials for now 
 
 public class MaterialColorChange : MonoBehaviour
 {
@@ -30,18 +31,19 @@ public class MaterialColorChange : MonoBehaviour
             if(x<2)
             {
                 x++;
+                if(matActive == false)
+                {
+                    matActive = true;
+                }
             }
-            if(matActive == false)
-            {
-                matActive = true;
-            }
+            
             if(x>=2)
             {
                 x=0;
-            }
-            if(matActive == true)
-            {
-                matActive = false;
+                if(matActive == true)
+                {
+                    matActive = false;
+                }
             }
         }
       
