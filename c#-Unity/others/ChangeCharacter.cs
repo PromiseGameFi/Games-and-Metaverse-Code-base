@@ -8,6 +8,7 @@ public class ChangeCharacter : MonoBehaviour
     public GameObject PlayerOne;
     public GameObject PlayerTwo;
     public GameObject EffectVisual;
+    public GameObject EffectVisual2;
     public bool IsChange;
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,7 @@ public class ChangeCharacter : MonoBehaviour
         PlayerOne.SetActive(true);
         PlayerTwo.SetActive(false);
         EffectVisual.SetActive(false);
+        EffectVisual2.SetActive(false);
         IsChange= true;
     }
 
@@ -29,14 +31,16 @@ public class ChangeCharacter : MonoBehaviour
             PlayerOne.GetComponent<Animator>().Play("Change");
             IsChange= false;
             Invoke("SetPlayerTwo", 1f);
-            
+            StartCoroutine(EndVFXone());
+
         }
         else if(Input.GetKeyDown(KeyCode.B) && !IsChange)
         {
-            StartCoroutine(StartVfx());
+            StartCoroutine(StartVfxTwo());
             PlayerTwo.GetComponent<Animator>().Play("Change");
             IsChange = true;
             Invoke("SetPlayerOne", 1f);
+            StartCoroutine(EndVFXone());
             
         }
       
@@ -65,10 +69,36 @@ public class ChangeCharacter : MonoBehaviour
 
      IEnumerator  StartVfx()
      {
-        EffectVisual.transform.position = PlayerTwo.transform.position;
+        
         EffectVisual.transform.position = PlayerOne.transform.position;
+        
+        EffectVisual2.transform.position = PlayerOne.transform.position;
+        
+        yield return new WaitForSeconds(1);
         EffectVisual.SetActive(true);
+        EffectVisual2.SetActive(true);
+    }
+
+    IEnumerator StartVfxTwo()
+    {
+        EffectVisual.transform.position = PlayerTwo.transform.position;
+        
+        EffectVisual2.transform.position = PlayerTwo.transform.position;
+      
+        
+        yield return new WaitForSeconds(1);
+        EffectVisual.SetActive(true);
+        EffectVisual2.SetActive(true);
+    }
+
+    IEnumerator EndVFXone()
+    {
         yield return new WaitForSeconds(5);
         EffectVisual.SetActive(false);
-     }
+        EffectVisual2.SetActive(false);
+    }
+
+
+
+
 }
