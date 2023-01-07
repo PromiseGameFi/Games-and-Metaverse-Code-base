@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AddScriptToColliders : MonoBehaviour
+public class AddScriptToChild : MonoBehaviour
 {
     public MonoBehaviour scriptToAdd;
 
