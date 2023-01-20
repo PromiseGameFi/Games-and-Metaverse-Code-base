@@ -4,6 +4,7 @@ public class AddCollider : MonoBehaviour
 {
     void Start()
     {
+        // For all Child gameObject
         // Get all the child game objects of the parent game object
         GameObject[] children = GetChildGameObjects();
 
