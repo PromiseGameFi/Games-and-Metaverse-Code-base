@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class KeyValue: MonoBehaviour
+public class KeyValueStorage : MonoBehaviour
 {
     public InputField keyInputField;
     public InputField valueInputField;
@@ -15,7 +15,7 @@ public class KeyValue: MonoBehaviour
     public int CountNumber;
 
 
-    public void Start()
+    public void GetButtons()
     {
         
         for (int i = 1; i <= PlayerPrefs.GetInt(BUTTON_COUNT_KEY); i++)
@@ -23,6 +23,7 @@ public class KeyValue: MonoBehaviour
             GameObject newButton = Instantiate(buttonPrefab, buttonParent);
             Button btn = newButton.GetComponent<Button>();
             btn.name = "key" + i;
+            btn.GetComponentInChildren<Text>().text =  PlayerPrefs.GetString("key" + i);
             buttons.Add(btn);
         }
 
@@ -46,10 +47,10 @@ public class KeyValue: MonoBehaviour
 
     }
 
-    public void Update()
+    /**public void Update()
     {
         UpdateButtons();
-    }
+    }*/
     public void GetValue()
     {
         if (PlayerPrefs.HasKey(keyInputField.text))
