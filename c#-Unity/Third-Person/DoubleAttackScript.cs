@@ -65,13 +65,13 @@ namespace Attack
             //StartCoroutine(DisableHitbox());
         }*/
 
-        private IEnumerator ResetFirstAttackTriggered()
+        /**private IEnumerator ResetFirstAttackTriggered()
         {
             // Wait for 3 seconds
             yield return new WaitForSeconds(3);
             // Reset the firstAttackTriggered flag
             firstAttackTriggered = false;
-        }
+        }*/
 
         private IEnumerator DisableHitbox()
         {
