@@ -57,13 +57,13 @@ namespace Attack
             StartCoroutine(DisableHitbox());
         }
 
-        private void DoubleAttack()
+        /**private void DoubleAttack()
         {
             // Play the second attack animation
             animator.Play(attackAnimation2.name);
             // Start a coroutine to disable the hitbox after the second attack animation has finished playing
             //StartCoroutine(DisableHitbox());
-        }
+        }*/
 
         private IEnumerator ResetFirstAttackTriggered()
         {
