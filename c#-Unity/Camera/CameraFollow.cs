@@ -10,6 +10,8 @@ public class Camera_Follow : MonoBehaviour
 
     void Start ()
     {
+    
+    
         offset.x = transform.position.x - player.transform.position.x;
         offset.z = transform.position.z - player.transform.position.z;
         newtrans=transform.position;
