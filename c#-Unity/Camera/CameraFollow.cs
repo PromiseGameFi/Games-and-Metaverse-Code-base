@@ -4,6 +4,8 @@ using System.Collections;
 public class Camera_Follow : MonoBehaviour
 {
 
+
+
     public GameObject player;
     private Vector3 offset;
     private Vector3 newtrans;
