@@ -5,6 +5,7 @@ using UnityEngine.XR.ARFoundation;
 
 public class ArController : MonoBehaviour
 {
+
     public GameObject MyObject;
     public ARRaycastManager RaycastManager;
     // Update is called once per frame
