@@ -43,9 +43,6 @@ public class FetchData : MonoBehaviour
 
         datapro.text = data[0].ToString();
 
-        print(data[0].ToString());
-
-        datapro.text = data[0].ToString()
 
     }
 }
