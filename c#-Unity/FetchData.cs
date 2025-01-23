@@ -39,9 +39,13 @@ public class FetchData : MonoBehaviour
         {
             address,
         });
-        print(data[0].ToString());
+         print(data[0].ToString());
 
         datapro.text = data[0].ToString();
+
+        print(data[0].ToString());
+
+        datapro.text = data[0].ToString()
 
     }
 }
